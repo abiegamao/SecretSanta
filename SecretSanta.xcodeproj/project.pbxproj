@@ -16,6 +16,7 @@
 		D3D8A77A1BBE8D5F00C58532 /* SecretSantaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D8A7791BBE8D5F00C58532 /* SecretSantaTests.swift */; };
 		D3D8A7861BBE92B200C58532 /* theClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D8A7851BBE92B200C58532 /* theClasses.swift */; };
 		D3D8A7891BBE989A00C58532 /* myModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3D8A7871BBE989A00C58532 /* myModel.xcdatamodeld */; };
+		D3D8A78B1BBE9C1B00C58532 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D8A78A1BBE9C1B00C58532 /* EventsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		D3D8A7791BBE8D5F00C58532 /* SecretSantaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretSantaTests.swift; sourceTree = "<group>"; };
 		D3D8A7851BBE92B200C58532 /* theClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = theClasses.swift; sourceTree = "<group>"; };
 		D3D8A7881BBE989A00C58532 /* myModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myModel.xcdatamodel; sourceTree = "<group>"; };
+		D3D8A78A1BBE9C1B00C58532 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				D3D8A75E1BBE8D5F00C58532 /* Supporting Files */,
 				D3D8A7851BBE92B200C58532 /* theClasses.swift */,
 				D3D8A7871BBE989A00C58532 /* myModel.xcdatamodeld */,
+				D3D8A78A1BBE9C1B00C58532 /* EventsTableViewController.swift */,
 			);
 			path = SecretSanta;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			files = (
 				D3D8A7861BBE92B200C58532 /* theClasses.swift in Sources */,
 				D3D8A7661BBE8D5F00C58532 /* ViewController.swift in Sources */,
+				D3D8A78B1BBE9C1B00C58532 /* EventsTableViewController.swift in Sources */,
 				D3D8A7611BBE8D5F00C58532 /* AppDelegate.swift in Sources */,
 				D3D8A7891BBE989A00C58532 /* myModel.xcdatamodeld in Sources */,
 				D3D8A7641BBE8D5F00C58532 /* SecretSanta.xcdatamodeld in Sources */,

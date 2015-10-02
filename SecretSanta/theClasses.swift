@@ -75,6 +75,20 @@ class Event{
         self.recipients.append(User(alias: "dracula4u", firstName: "Nick", lastName: "Jonas", email: "nick@yahoo.com", gender: Gender.Male, posts: []))
     }
     
+    init(title: String, description: String, eventDeadline: String, eventDate: String, venue: String, time: String, participants: [User], recipients: [User]){
+        
+        self.title = title
+        self.description = description
+        self.eventDeadline = eventDeadline
+        self.eventDate = eventDate
+        self.venue = venue
+        self.time = time
+        self.participants = participants
+        self.recipients = recipients
+        
+        
+    }
+    
     
     
     
