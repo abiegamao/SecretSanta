@@ -56,7 +56,6 @@ class Event{
     var eventDeadline: String
     var eventDate: String
     var venue: String
-    var time: String
     var participants : [User] = []
     var recipients : [User] = []
     
@@ -68,21 +67,19 @@ class Event{
         self.eventDeadline = "December 20, 2015"
         self.eventDate =  "December 25, 2015"
         self.venue = "ADDU F213"
-        self.time = "1:30 pm - 5:00 pm"
         self.participants.append(User())
         
         
         self.recipients.append(User(alias: "dracula4u", firstName: "Nick", lastName: "Jonas", email: "nick@yahoo.com", gender: Gender.Male, posts: []))
     }
     
-    init(title: String, description: String, eventDeadline: String, eventDate: String, venue: String, time: String, participants: [User], recipients: [User]){
+    init(title: String, description: String, eventDeadline: String, eventDate: String, venue: String,participants: [User], recipients: [User]){
         
         self.title = title
         self.description = description
         self.eventDeadline = eventDeadline
         self.eventDate = eventDate
         self.venue = venue
-        self.time = time
         self.participants = participants
         self.recipients = recipients
         
