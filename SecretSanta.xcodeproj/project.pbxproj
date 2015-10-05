@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D373D6FC1BC28BB300D03BC1 /* addEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373D6FB1BC28BB300D03BC1 /* addEventViewController.swift */; };
 		D3D8A7611BBE8D5F00C58532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D8A7601BBE8D5F00C58532 /* AppDelegate.swift */; };
 		D3D8A7641BBE8D5F00C58532 /* SecretSanta.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3D8A7621BBE8D5F00C58532 /* SecretSanta.xcdatamodeld */; };
 		D3D8A7661BBE8D5F00C58532 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D8A7651BBE8D5F00C58532 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D373D6FB1BC28BB300D03BC1 /* addEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addEventViewController.swift; sourceTree = "<group>"; };
 		D3D8A75B1BBE8D5F00C58532 /* SecretSanta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecretSanta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D8A75F1BBE8D5F00C58532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3D8A7601BBE8D5F00C58532 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				D3D8A7851BBE92B200C58532 /* theClasses.swift */,
 				D3D8A7871BBE989A00C58532 /* myModel.xcdatamodeld */,
 				D3D8A78A1BBE9C1B00C58532 /* EventsTableViewController.swift */,
+				D373D6FB1BC28BB300D03BC1 /* addEventViewController.swift */,
 			);
 			path = SecretSanta;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				D3D8A7861BBE92B200C58532 /* theClasses.swift in Sources */,
 				D3D8A7661BBE8D5F00C58532 /* ViewController.swift in Sources */,
 				D3D8A78B1BBE9C1B00C58532 /* EventsTableViewController.swift in Sources */,
+				D373D6FC1BC28BB300D03BC1 /* addEventViewController.swift in Sources */,
 				D3D8A7611BBE8D5F00C58532 /* AppDelegate.swift in Sources */,
 				D3D8A7891BBE989A00C58532 /* myModel.xcdatamodeld in Sources */,
 				D3D8A7641BBE8D5F00C58532 /* SecretSanta.xcdatamodeld in Sources */,
@@ -427,6 +431,7 @@
 				D3D8A77F1BBE8D5F00C58532 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3D8A7801BBE8D5F00C58532 /* Build configuration list for PBXNativeTarget "SecretSantaTests" */ = {
 			isa = XCConfigurationList;
@@ -435,6 +440,7 @@
 				D3D8A7821BBE8D5F00C58532 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

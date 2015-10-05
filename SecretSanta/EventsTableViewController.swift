@@ -8,9 +8,39 @@
 
 import UIKit
 
-class EventsTableViewController: UITableViewController {
+
+
+
+protocol EventDelegate{
+
+
+    func addEvent(event: Event)
+    func editEvent(event: Event)
+    
+}
+
+class EventsTableViewController: UITableViewController, EventDelegate {
+    
     
     var events : [Event] = []
+    
+    
+    
+    
+    // DELEGATE FUNCTION
+    
+    func addEvent(event: Event) {
+        self.events.append(event)
+        self.tableView.reloadData()
+    }
+    
+    func editEvent(event: Event) {
+        if let path = self.tableView.indexPathForSelectedRow(){
+            events[path.row] = event
+            tableView.reloadData()
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,14 +124,27 @@ class EventsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
+    //DELEGATE FINALLLL!
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        
+        if let segueIdentifier = segue.identifier{
+            if segueIdentifier == "addEventSegue" {
+                let vc = segue.destinationViewController as! EventsTableViewController
+              //  if let path =
+                
+            }
+        
+        }
+        
+        
+        
     }
-    */
+
 
 }
