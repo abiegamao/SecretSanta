@@ -23,6 +23,7 @@ class addEventViewController: UIViewController, UITextFieldDelegate {
     
     var delegate: EventDelegate!
     var theEvent: Event!
+    var operation: Operation = Operation.Add
     
     
     @IBAction func addEvent(sender: AnyObject) {
@@ -31,10 +32,27 @@ class addEventViewController: UIViewController, UITextFieldDelegate {
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
         var strEventDate = dateFormatter.stringFromDate(eventDate.date)
         
-        theEvent = Event(title: eventTitle.text, description: eventDescription.text, eventDeadline: eventDeadline.text, eventDate: strEventDate, venue: eventVenue.text, participants: [], recipients: [])
         
         
-     delegate.addEvent(theEvent)
+        if theEvent == nil {
+
+            theEvent = Event(title: eventTitle.text, description: eventDescription.text, eventDeadline: eventDeadline.text,     eventDate: strEventDate, venue: eventVenue.text, participants: [], recipients: [])
+            
+                delegate.addEvent(theEvent)
+        }
+        else {
+            
+            
+           theEvent.title = eventTitle.text
+           theEvent.description = eventDescription.text
+           theEvent.venue = eventVenue.text
+           theEvent.eventDeadline = eventDeadline.text
+           theEvent.eventDate = strEventDate
+           delegate.editEvent()
+        }
+        
+    
+        self.navigationController?.popViewControllerAnimated(true)
         
         
         
@@ -44,6 +62,22 @@ class addEventViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //SHOW OLD VALUES WHEN EDIT MODE
+        if theEvent != nil {
+            eventTitle.text = theEvent.title
+            eventDescription.text = theEvent.description
+            //eventDate. = theEvent.eventDate
+            eventVenue.text = theEvent.venue
+            eventDeadline.text = theEvent.eventDeadline
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+            println(theEvent.eventDate)
+            eventDate.date =  dateFormatter.dateFromString(theEvent.eventDate)!
+            self.navigationItem.title = "Edit An Event"
+        
+        }
 
         // Do any additional setup after loading the view.
     }

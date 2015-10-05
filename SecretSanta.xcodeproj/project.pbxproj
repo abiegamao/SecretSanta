@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D31BA9861BC2A1DF001B4FCA /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31BA9851BC2A1DF001B4FCA /* UsersTableViewController.swift */; };
 		D373D6FC1BC28BB300D03BC1 /* addEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373D6FB1BC28BB300D03BC1 /* addEventViewController.swift */; };
 		D3D8A7611BBE8D5F00C58532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D8A7601BBE8D5F00C58532 /* AppDelegate.swift */; };
 		D3D8A7641BBE8D5F00C58532 /* SecretSanta.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3D8A7621BBE8D5F00C58532 /* SecretSanta.xcdatamodeld */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D31BA9851BC2A1DF001B4FCA /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		D373D6FB1BC28BB300D03BC1 /* addEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addEventViewController.swift; sourceTree = "<group>"; };
 		D3D8A75B1BBE8D5F00C58532 /* SecretSanta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecretSanta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D8A75F1BBE8D5F00C58532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				D3D8A7871BBE989A00C58532 /* myModel.xcdatamodeld */,
 				D3D8A78A1BBE9C1B00C58532 /* EventsTableViewController.swift */,
 				D373D6FB1BC28BB300D03BC1 /* addEventViewController.swift */,
+				D31BA9851BC2A1DF001B4FCA /* UsersTableViewController.swift */,
 			);
 			path = SecretSanta;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			files = (
 				D3D8A7861BBE92B200C58532 /* theClasses.swift in Sources */,
 				D3D8A7661BBE8D5F00C58532 /* ViewController.swift in Sources */,
+				D31BA9861BC2A1DF001B4FCA /* UsersTableViewController.swift in Sources */,
 				D3D8A78B1BBE9C1B00C58532 /* EventsTableViewController.swift in Sources */,
 				D373D6FC1BC28BB300D03BC1 /* addEventViewController.swift in Sources */,
 				D3D8A7611BBE8D5F00C58532 /* AppDelegate.swift in Sources */,

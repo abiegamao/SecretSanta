@@ -12,7 +12,9 @@ import UIKit
 enum Gender{
     case Male, Female
 }
-
+enum Operation: String {
+    case Add = "Add", Edit = "Edit"
+}
 
 class User {
     var alias: String
@@ -64,8 +66,8 @@ class Event{
     init(){
         self.title = "CS4A Christmas Party"
         self.description = "ADDU CS 4A Christmas Party This Decemeber 25th!"
-        self.eventDeadline = "December 20, 2015"
-        self.eventDate =  "December 25, 2015"
+        self.eventDeadline = "3"
+        self.eventDate =  "07-10-2015 20:09"
         self.venue = "ADDU F213"
         self.participants.append(User())
         

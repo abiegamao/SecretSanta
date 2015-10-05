@@ -1,61 +1,27 @@
 //
-//  EventsTableViewController.swift
+//  UsersTableViewController.swift
 //  SecretSanta
 //
-//  Created by Joenabie M Gamao on 10/2/15.
+//  Created by Joenabie M Gamao on 10/5/15.
 //  Copyright (c) 2015 Joenabie M Gamao. All rights reserved.
 //
 
 import UIKit
 
-
-
-
-protocol EventDelegate{
-
-
-    func addEvent(event: Event)
-    func editEvent()
+class UsersTableViewController: UITableViewController {
     
-}
-
-class EventsTableViewController: UITableViewController, EventDelegate {
-    
-    
-    var events : [Event] = []
-    
-    
-    
-    
-    // DELEGATE FUNCTION
-    
-    func addEvent(event: Event) {
-        self.events.append(event)
-        self.tableView.reloadData()
-    }
-    
-    func editEvent() {
-       /* if let path = self.tableView.indexPathForSelectedRow(){
-            events[path.row] = event
-            tableView.reloadData()
-        }*/
-        tableView.reloadData()
-    }
-    
+    var users: [User] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        var event1 = Event()
-        
-        events.append(event1)
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        var user1 = User()
+        var user2 = User(alias: "Lovely", firstName: "Nigga", lastName: "What", email: "crazy2mail.com", gender: Gender.Male, posts: [])
+        users.append(user1)
+        users.append(user2)
+        users.append(User(alias: "warzon", firstName: "Kromyko", lastName: "Cruzado", email: "lol@yahoo.com", gender: Gender.Male, posts: []))
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,17 +40,17 @@ class EventsTableViewController: UITableViewController, EventDelegate {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return events.count
+        return users.count
     }
 
-    /// LOAD VALUEs
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("eventsIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("usersIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = events[indexPath.row].title
-        cell.detailTextLabel?.text = events[indexPath.row].eventDate
         
+        
+        cell.textLabel?.text = users[indexPath.row].firstName + " " + users[indexPath.row].lastName
 
         return cell
     }
@@ -125,40 +91,14 @@ class EventsTableViewController: UITableViewController, EventDelegate {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
-    //DELEGATE FINALLLL!
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        
-        if let segueIdentifier = segue.identifier{
-            if segueIdentifier == "editEventSegue" {
-                let vc = segue.destinationViewController as! addEventViewController
-                if let path = self.tableView.indexPathForSelectedRow() {
-                  vc.delegate = self
-                  vc.theEvent = events[path.row]
-                  vc.operation = .Edit
-                    
-                }
-                
-            }
-            
-            if segueIdentifier == "addEventSegue" {
-                let vc = segue.destinationViewController as! addEventViewController
-                vc.delegate = self
-                vc.operation = .Add
-            
-            
-            }
-        
-        }
-        
-        
-        
     }
-
+    */
 
 }
