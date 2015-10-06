@@ -13,7 +13,6 @@ import UIKit
 protocol UserDelegate {
 
     func addUser(user: User)
-    func editUser()
 
 
 }
@@ -25,10 +24,10 @@ class UsersTableViewController: UITableViewController, UserDelegate{
     
     func addUser(user: User) {
         self.users.append(user)
-        self.tableView.reloadData()
+
     }
     
-    func editUser() {
+    override func viewWillAppear(animated: Bool) {
         self.tableView.reloadData()
     }
 

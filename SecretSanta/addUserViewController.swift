@@ -24,7 +24,7 @@ class addUserViewController: UIViewController {
     @IBAction func saveButton(sender: AnyObject) {
         // NEW USER
         if theUser == nil {
-            theUser = User(alias: alias.text, firstName: firstName.text, lastName: lastName.text, email: email.text,password: password.text, gender: Gender.Male, posts: [])
+            theUser = User(alias: alias.text, firstName: firstName.text, lastName: lastName.text, email: email.text,password: password.text, gender: Gender(rawValue: gender.selectedSegmentIndex)!, posts: [])
             
             delegate.addUser(theUser)
         }
@@ -35,7 +35,7 @@ class addUserViewController: UIViewController {
             theUser.alias = alias.text
             theUser.email = email.text
             theUser.password = password.text
-            theUser.gender = Gender.Male
+            theUser.gender = Gender(rawValue: gender.selectedSegmentIndex)!
             
             
         }
@@ -56,6 +56,7 @@ class addUserViewController: UIViewController {
             alias.text = theUser.alias
             email.text = theUser.email
             password.text = theUser.password
+            gender.selectedSegmentIndex = theUser.gender.rawValue
             
             self.navigationItem.title = "Edit a User"
             

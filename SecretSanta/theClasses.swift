@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-enum Gender{
-    case Male, Female
+enum Gender: Int{
+    case Male = 0 , Female = 1
 }
 enum Operation: String {
     case Add = "Add", Edit = "Edit"
