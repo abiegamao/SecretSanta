@@ -134,8 +134,8 @@ class EventsTableViewController: UITableViewController, EventDelegate {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         
-        if let segueIdentifier = segue.identifier{
-            if segueIdentifier == "editEventSegue" {
+      
+            if segue.identifier == "editEventSegue" {
                 let vc = segue.destinationViewController as! addEventViewController
                 if let path = self.tableView.indexPathForSelectedRow() {
                   vc.delegate = self
@@ -146,7 +146,7 @@ class EventsTableViewController: UITableViewController, EventDelegate {
                 
             }
             
-            if segueIdentifier == "addEventSegue" {
+            if segue.identifier == "addEventSegue" {
                 let vc = segue.destinationViewController as! addEventViewController
                 vc.delegate = self
                 vc.operation = .Add
@@ -154,7 +154,7 @@ class EventsTableViewController: UITableViewController, EventDelegate {
             
             }
         
-        }
+        
         
         
         

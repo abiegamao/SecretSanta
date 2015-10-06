@@ -65,9 +65,6 @@
                                 <state key="normal" title="Register">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="cR7-II-JBI" kind="show" identifier="registerSegue" id="YHG-zi-ha9"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -470,6 +467,9 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Sxi-lA-iHZ" kind="show" identifier="editUserSegue" id="I34-4j-Ggm"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -514,11 +514,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alias" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qcH-Hu-Mpb">
-                                <rect key="frame" x="225" y="252" width="150" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9nI-9C-QQr">
                                 <rect key="frame" x="225" y="290" width="150" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -536,6 +531,11 @@
                                     <segment title="Female"/>
                                 </segments>
                             </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alias" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qcH-Hu-Mpb">
+                                <rect key="frame" x="225" y="252" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -560,9 +560,21 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Add a User" id="PEq-Sv-ydy">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="OJz-yl-ymy"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="OJz-yl-ymy">
+                            <connections>
+                                <action selector="saveButton:" destination="Sxi-lA-iHZ" id="iLN-cI-zdp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="alias" destination="qcH-Hu-Mpb" id="Dwa-AN-CJ3"/>
+                        <outlet property="email" destination="9nI-9C-QQr" id="Zuv-7Z-cOG"/>
+                        <outlet property="firstName" destination="PoH-Gm-q9q" id="5kq-UN-Whj"/>
+                        <outlet property="gender" destination="Whi-nX-UF3" id="ZoW-CX-7sX"/>
+                        <outlet property="lastName" destination="EeF-Vz-7y3" id="5aV-Ri-YG7"/>
+                        <outlet property="password" destination="gc7-bD-d1r" id="UeB-G9-rgG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ml-jW-vks" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -616,5 +628,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WT5-4M-GaP"/>
+        <segue reference="I34-4j-Ggm"/>
     </inferredMetricsTieBreakers>
 </document>

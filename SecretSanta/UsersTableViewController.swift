@@ -8,18 +8,38 @@
 
 import UIKit
 
-class UsersTableViewController: UITableViewController {
+
+
+protocol UserDelegate {
+
+    func addUser(user: User)
+    func editUser()
+
+
+}
+
+class UsersTableViewController: UITableViewController, UserDelegate{
     
     var users: [User] = []
+    
+    
+    func addUser(user: User) {
+        self.users.append(user)
+        self.tableView.reloadData()
+    }
+    
+    func editUser() {
+        self.tableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         var user1 = User()
-        var user2 = User(alias: "Lovely", firstName: "Nigga", lastName: "What", email: "crazy2mail.com", gender: Gender.Male, posts: [])
+        var user2 = User(alias: "Lovely", firstName: "Nigga", lastName: "What", email: "crazy2mail.com",password: "123", gender: Gender.Female, posts: [])
         users.append(user1)
         users.append(user2)
-        users.append(User(alias: "warzon", firstName: "Kromyko", lastName: "Cruzado", email: "lol@yahoo.com", gender: Gender.Male, posts: []))
+        users.append(User(alias: "warzon", firstName: "Kromyko", lastName: "Cruzado", email: "lol@yahoo.com",password: "123", gender: Gender.Male, posts: []))
         
         
     }
@@ -91,14 +111,40 @@ class UsersTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        
+    
+    
+            if segue.identifier == "addUserSegue" {
+                let vc = segue.destinationViewController as! addUserViewController
+                vc.delegate = self
+
+            }
+        
+        if segue.identifier == "editUserSegue" {
+            let vc = segue.destinationViewController as! addUserViewController
+            
+            if let path = self.tableView.indexPathForSelectedRow(){
+                
+                vc.delegate = self
+                vc.theUser = users[path.row]
+            
+            }
+            
+        
+        }
+        
+        
+        
+        
+        
     }
-    */
+    
 
 }

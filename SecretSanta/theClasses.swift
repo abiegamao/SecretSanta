@@ -21,6 +21,7 @@ class User {
     var firstName: String
     var lastName: String
     var email: String
+    var password: String
     var gender: Gender
     var posts: [Post] = []
     
@@ -31,15 +32,17 @@ class User {
         self.firstName = "Joenabie"
         self.lastName = "Gamao"
         self.email = "jmgamao@addu.edu.ph"
+        self.password = "1234"
         self.gender = Gender.Female
         self.posts = []
     }
     
-    init(alias: String, firstName: String, lastName: String, email: String, gender: Gender, posts: [Post]){
+    init(alias: String, firstName: String, lastName: String, email: String, password: String, gender: Gender, posts: [Post]){
         self.alias = alias
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
+        self.password = password
         self.gender = gender
         self.posts = posts
     }
@@ -72,7 +75,7 @@ class Event{
         self.participants.append(User())
         
         
-        self.recipients.append(User(alias: "dracula4u", firstName: "Nick", lastName: "Jonas", email: "nick@yahoo.com", gender: Gender.Male, posts: []))
+        self.recipients.append(User(alias: "dracula4u", firstName: "Nick", lastName: "Jonas", email: "nick@yahoo.com",password: "123", gender: Gender.Male, posts: []))
     }
     
     init(title: String, description: String, eventDeadline: String, eventDate: String, venue: String,participants: [User], recipients: [User]){
