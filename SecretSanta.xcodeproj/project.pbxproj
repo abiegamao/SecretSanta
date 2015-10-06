@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F2211EB1BC4412B00656FF5 /* participantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2211EA1BC4412B00656FF5 /* participantsTableViewController.swift */; };
 		D31BA9861BC2A1DF001B4FCA /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31BA9851BC2A1DF001B4FCA /* UsersTableViewController.swift */; };
 		D31BA9881BC2A606001B4FCA /* addUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31BA9871BC2A606001B4FCA /* addUserViewController.swift */; };
 		D373D6FC1BC28BB300D03BC1 /* addEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373D6FB1BC28BB300D03BC1 /* addEventViewController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F2211EA1BC4412B00656FF5 /* participantsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = participantsTableViewController.swift; sourceTree = "<group>"; };
 		D31BA9851BC2A1DF001B4FCA /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		D31BA9871BC2A606001B4FCA /* addUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addUserViewController.swift; sourceTree = "<group>"; };
 		D373D6FB1BC28BB300D03BC1 /* addEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addEventViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				D373D6FB1BC28BB300D03BC1 /* addEventViewController.swift */,
 				D31BA9851BC2A1DF001B4FCA /* UsersTableViewController.swift */,
 				D31BA9871BC2A606001B4FCA /* addUserViewController.swift */,
+				6F2211EA1BC4412B00656FF5 /* participantsTableViewController.swift */,
 			);
 			path = SecretSanta;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				D3D8A7611BBE8D5F00C58532 /* AppDelegate.swift in Sources */,
 				D3D8A7891BBE989A00C58532 /* myModel.xcdatamodeld in Sources */,
 				D3D8A7641BBE8D5F00C58532 /* SecretSanta.xcdatamodeld in Sources */,
+				6F2211EB1BC4412B00656FF5 /* participantsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

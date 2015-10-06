@@ -116,7 +116,16 @@ class Post{
     
 }
 
-
+func newShuffledArray(array:NSArray) -> NSArray {
+    var mutableArray = array.mutableCopy() as! NSMutableArray
+    var count = mutableArray.count
+    if count>1 {
+        for var i=count-1;i>0;--i{
+            mutableArray.exchangeObjectAtIndex(i, withObjectAtIndex: Int(arc4random_uniform(UInt32(i+1))))
+        }
+    }
+    return mutableArray as NSArray
+}
 
 
 
