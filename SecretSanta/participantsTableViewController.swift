@@ -12,6 +12,31 @@ class participantsTableViewController: UITableViewController {
     
     
     var users : [User] = []
+    var delegate : ParticipantsDelegate!
+    
+    var selectedUsers : Set <String> = []
+    
+    
+    @IBAction func doneButton(sender: AnyObject) {
+        
+        
+        for i in self.selectedUsers{
+            
+            for j in users {
+                
+                if i == j.firstName{
+                    delegate.addParticipants(j)
+                }
+            
+            }
+        
+        
+        }
+        self.navigationController?.popViewControllerAnimated(true)
+        
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,11 +80,40 @@ class participantsTableViewController: UITableViewController {
 
         // Configure the cell...
         
-        cell.textLabel?.text = users[indexPath.row].firstName + " " + users[indexPath.row].lastName
+        cell.textLabel?.text = users[indexPath.row].firstName
+            //+ " " + users[indexPath.row].lastName
 
         return cell
     }
-
+    
+    
+    
+    
+    
+    
+    //SELECTED USERS
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let mySelectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        
+        mySelectedCell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        
+   
+        selectedUsers.insert(users[indexPath.row].firstName)
+    
+        
+    }
+    
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        let mySelectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        
+        
+        mySelectedCell.accessoryType = UITableViewCellAccessoryType.None
+        
+        
+        //   selectedClasses.remove(theClasses[indexPath])
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.

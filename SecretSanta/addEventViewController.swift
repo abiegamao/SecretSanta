@@ -8,7 +8,15 @@
 
 import UIKit
 
-class addEventViewController: UIViewController, UITextFieldDelegate,UITableViewDataSource, UITableViewDelegate {
+
+protocol ParticipantsDelegate{
+    
+    func addParticipants(participant: User)
+    
+    
+}
+
+class addEventViewController: UIViewController, UITextFieldDelegate,UITableViewDataSource, UITableViewDelegate,ParticipantsDelegate {
     
     
     @IBOutlet weak var eventTitle: UITextField!
@@ -30,7 +38,17 @@ class addEventViewController: UIViewController, UITextFieldDelegate,UITableViewD
     var operation: Operation = Operation.Add
     
     
-     var participants: [User] = []
+    var participants: [User] = []
+    
+
+    func addParticipants(participant: User)
+    {
+        
+    //    self.participants = theEvent.participants
+        participants.append(participant)
+        self.participantsTableView.reloadData()
+    }
+    
     
     @IBAction func addEvent1(sender: AnyObject) {
         
@@ -70,7 +88,7 @@ class addEventViewController: UIViewController, UITextFieldDelegate,UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    //    self.participants = theEvent.participants
         
         //SHOW OLD VALUES WHEN EDIT MODE
         if theEvent != nil {
@@ -97,18 +115,14 @@ class addEventViewController: UIViewController, UITextFieldDelegate,UITableViewD
         
         //PARTICIPANTS
         
-        var user1 = User()
-        var user2 = User(alias: "Lovely", firstName: "Nigga", lastName: "What", email: "crazy2mail.com",password: "123", gender: Gender.Female, posts: [])
-        participants.append(user1)
-        participants.append(user2)
-        participants.append(User(alias: "warzon", firstName: "Kromyko", lastName: "Cruzado", email: "lol@yahoo.com",password: "123", gender: Gender.Male, posts: []))
-
-        
         
         
 
         // Do any additional setup after loading the view.
     }
+    
+
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -116,15 +130,29 @@ class addEventViewController: UIViewController, UITextFieldDelegate,UITableViewD
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        
+        if segue.identifier! ==  "participantsSegue" {
+            
+            if let vc = segue.destinationViewController as? participantsTableViewController {
+                
+                vc.delegate = self
+                
+                
+                
+            }
+            
+        }
+
     }
-    */
+    
     
     
     
@@ -146,7 +174,7 @@ class addEventViewController: UIViewController, UITextFieldDelegate,UITableViewD
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "Classes"
+            return "Participants"
         }
         else {
             return ""

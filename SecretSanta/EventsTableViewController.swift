@@ -89,6 +89,26 @@ class EventsTableViewController: UITableViewController, EventDelegate {
         return cell
     }
     
+    
+    //DELETE
+    
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 {
+            if editingStyle == .Delete {
+                events.removeAtIndex(indexPath.row)
+                // Delete the row from the data source
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                
+            } else if editingStyle == .Insert {
+                // NSThread.sleepForTimeInterval(2)
+                // tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Bottom)
+                // println("edit insert")
+                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            }
+        }
+    }
+
 
     /*
     // Override to support conditional editing of the table view.
