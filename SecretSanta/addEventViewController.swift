@@ -19,6 +19,7 @@ class addEventViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var eventDate: UIDatePicker!
     @IBOutlet weak var eventDeadline: UITextField!
     
+    @IBOutlet weak var eventDateTF: UITextField!
     
     
     var delegate: EventDelegate!
@@ -59,6 +60,9 @@ class addEventViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    //DATE PICKER PICKER VIEW
+   //SIR CGROM
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,11 +77,18 @@ class addEventViewController: UIViewController, UITextFieldDelegate {
             eventDeadline.text = theEvent.eventDeadline
             var dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
-            println(theEvent.eventDate)
+           // println(theEvent.eventDate)
             eventDate.date =  dateFormatter.dateFromString(theEvent.eventDate)!
+            // DATE PICKER LABEL
+            var strEventDate = dateFormatter.stringFromDate(eventDate.date)
+            eventDateTF.text = strEventDate
             self.navigationItem.title = "Edit An Event"
         
         }
+        
+        eventDate.removeFromSuperview()
+        
+        eventDateTF.inputView = eventDate
 
         // Do any additional setup after loading the view.
     }
