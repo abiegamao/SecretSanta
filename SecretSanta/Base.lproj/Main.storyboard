@@ -573,7 +573,7 @@
             </objects>
             <point key="canvasLocation" x="2151" y="1173"/>
         </scene>
-        <!--Users Table View Controller-->
+        <!--Users-->
         <scene sceneID="zuD-yH-wLU">
             <objects>
                 <tableViewController id="dle-cS-YpA" customClass="UsersTableViewController" customModule="SecretSanta" customModuleProvider="target" sceneMemberID="viewController">
@@ -613,7 +613,7 @@
                             <outlet property="delegate" destination="dle-cS-YpA" id="dYw-Nw-ptz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="IcP-Sp-emq">
+                    <navigationItem key="navigationItem" title="Users" id="IcP-Sp-emq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fYO-q0-OPi">
                             <connections>
                                 <segue destination="Sxi-lA-iHZ" kind="show" identifier="addUserSegue" id="vdK-rI-PFy"/>

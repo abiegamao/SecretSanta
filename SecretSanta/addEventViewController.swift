@@ -173,7 +173,16 @@ class addEventViewController: UIViewController, UITextFieldDelegate,UITableViewD
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return theEvent.participants.count
+        
+        if theEvent != nil {
+            return theEvent.participants.count
+        
+        }
+        
+        else {
+            return 0
+        }
+        
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
