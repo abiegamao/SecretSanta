@@ -41,11 +41,13 @@ class addEventViewController: UIViewController, UITextFieldDelegate,UITableViewD
     var participants: [User] = []
     
 
+    
+
     func addParticipants(participant: User)
     {
         
     //    self.participants = theEvent.participants
-        participants.append(participant)
+        theEvent.participants.append(participant)
         self.participantsTableView.reloadData()
     }
     
@@ -104,6 +106,8 @@ class addEventViewController: UIViewController, UITextFieldDelegate,UITableViewD
             // DATE PICKER LABEL
             var strEventDate = dateFormatter.stringFromDate(eventDate.date)
             eventDateTF.text = strEventDate
+            self.participants = self.theEvent.participants
+            
             self.navigationItem.title = "Edit An Event"
         
         }
@@ -169,7 +173,7 @@ class addEventViewController: UIViewController, UITextFieldDelegate,UITableViewD
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return participants.count
+        return theEvent.participants.count
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -185,10 +189,29 @@ class addEventViewController: UIViewController, UITextFieldDelegate,UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("participantsIdentifier", forIndexPath: indexPath) as! UITableViewCell
         
-        cell.textLabel!.text = participants[indexPath.row].firstName
+        cell.textLabel!.text = theEvent.participants[indexPath.row].firstName
         
         return cell
     }
+    // Override to support editing the table view.
+   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 {
+            if editingStyle == .Delete {
+                theEvent.participants.removeAtIndex(indexPath.row)
+                // Delete the row from the data source
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                
+            } else if editingStyle == .Insert {
+                // NSThread.sleepForTimeInterval(2)
+                // tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Bottom)
+                // println("edit insert")
+                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            }
+        }
+    }
+
+    
+    
     
     /*
     // Override to support conditional editing of the table view.
