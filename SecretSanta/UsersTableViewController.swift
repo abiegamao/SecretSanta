@@ -24,6 +24,14 @@ class UsersTableViewController: UITableViewController, UserDelegate{
     
     func addUser(user: User) {
         self.users.append(user)
+        
+        
+        //CORE DATA
+        
+       // let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+       // let usersEntity +
+        
+        
 
     }
     
