@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -480,7 +480,7 @@
                     <navigationItem key="navigationItem" id="IcP-Sp-emq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fYO-q0-OPi">
                             <connections>
-                                <segue destination="Sxi-lA-iHZ" kind="show" id="vdK-rI-PFy"/>
+                                <segue destination="Sxi-lA-iHZ" kind="show" identifier="addUserSegue" id="vdK-rI-PFy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -489,10 +489,10 @@
             </objects>
             <point key="canvasLocation" x="3617" y="1164"/>
         </scene>
-        <!--View Controller-->
+        <!--Add a User-->
         <scene sceneID="55z-FT-JO8">
             <objects>
-                <viewController id="Sxi-lA-iHZ" sceneMemberID="viewController">
+                <viewController id="Sxi-lA-iHZ" customClass="addUserViewController" customModule="SecretSanta" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0x8-SM-sWf"/>
                         <viewControllerLayoutGuide type="bottom" id="dhY-O8-FA1"/>
@@ -500,8 +500,69 @@
                     <view key="view" contentMode="scaleToFill" id="6rf-oK-kiu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Firstname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PoH-Gm-q9q">
+                                <rect key="frame" x="225" y="176" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="pQO-gz-8fn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lastname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EeF-Vz-7y3">
+                                <rect key="frame" x="225" y="214" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alias" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qcH-Hu-Mpb">
+                                <rect key="frame" x="225" y="252" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9nI-9C-QQr">
+                                <rect key="frame" x="225" y="290" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gc7-bD-d1r">
+                                <rect key="frame" x="225" y="328" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Whi-nX-UF3">
+                                <rect key="frame" x="225" y="372" width="150" height="29"/>
+                                <segments>
+                                    <segment title="Male"/>
+                                    <segment title="Female"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qcH-Hu-Mpb" firstAttribute="top" secondItem="EeF-Vz-7y3" secondAttribute="bottom" constant="8" id="1Sh-Ua-z7L"/>
+                            <constraint firstItem="gc7-bD-d1r" firstAttribute="top" secondItem="9nI-9C-QQr" secondAttribute="bottom" constant="8" id="4We-Dx-9CO"/>
+                            <constraint firstItem="EeF-Vz-7y3" firstAttribute="width" secondItem="PoH-Gm-q9q" secondAttribute="width" id="5ag-90-VZ1"/>
+                            <constraint firstItem="EeF-Vz-7y3" firstAttribute="centerX" secondItem="qcH-Hu-Mpb" secondAttribute="centerX" id="8jL-tx-sht"/>
+                            <constraint firstItem="gc7-bD-d1r" firstAttribute="centerX" secondItem="9nI-9C-QQr" secondAttribute="centerX" id="Em9-R5-lZB"/>
+                            <constraint firstItem="gc7-bD-d1r" firstAttribute="width" secondItem="9nI-9C-QQr" secondAttribute="width" id="JMY-ET-NUH"/>
+                            <constraint firstItem="Whi-nX-UF3" firstAttribute="top" secondItem="gc7-bD-d1r" secondAttribute="bottom" constant="27" id="JXw-68-ca1"/>
+                            <constraint firstItem="PoH-Gm-q9q" firstAttribute="top" secondItem="0x8-SM-sWf" secondAttribute="bottom" constant="112" id="JZy-gL-ifW"/>
+                            <constraint firstItem="9nI-9C-QQr" firstAttribute="top" secondItem="qcH-Hu-Mpb" secondAttribute="bottom" constant="14" id="Jvt-LO-xhb"/>
+                            <constraint firstItem="EeF-Vz-7y3" firstAttribute="top" secondItem="PoH-Gm-q9q" secondAttribute="bottom" constant="8" id="Lpz-0q-IaN"/>
+                            <constraint firstItem="EeF-Vz-7y3" firstAttribute="width" secondItem="qcH-Hu-Mpb" secondAttribute="width" id="Noe-Nj-D8y"/>
+                            <constraint firstItem="qcH-Hu-Mpb" firstAttribute="centerX" secondItem="9nI-9C-QQr" secondAttribute="centerX" id="XCp-1x-fc9"/>
+                            <constraint firstItem="qcH-Hu-Mpb" firstAttribute="width" secondItem="9nI-9C-QQr" secondAttribute="width" id="fGl-PH-N6Q"/>
+                            <constraint firstItem="gc7-bD-d1r" firstAttribute="width" secondItem="Whi-nX-UF3" secondAttribute="width" id="puD-rZ-JxE"/>
+                            <constraint firstItem="gc7-bD-d1r" firstAttribute="centerX" secondItem="Whi-nX-UF3" secondAttribute="centerX" id="r8w-EN-yOB"/>
+                            <constraint firstItem="EeF-Vz-7y3" firstAttribute="centerX" secondItem="PoH-Gm-q9q" secondAttribute="centerX" id="s1Q-f9-8wi"/>
+                            <constraint firstAttribute="centerX" secondItem="PoH-Gm-q9q" secondAttribute="centerX" id="zEm-qB-EBh"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Add a User" id="PEq-Sv-ydy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="OJz-yl-ymy"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ml-jW-vks" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
